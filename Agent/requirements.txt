@@ -1,0 +1,4 @@
+grpcio==1.6.0
+grpcio-tools==1.6.0
+requests
+watchdog

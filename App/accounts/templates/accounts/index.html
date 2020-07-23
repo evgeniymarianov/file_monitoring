@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Авторизация</title>
+</head>
+<body>
+
+  <li class="nav-item">
+
+<a class="nav-link btn-danger ml-5" href="{{url_logout_page}}">Выйти</a>
+</li>
+<li class="nav-item">
+<a class="nav-link {% if url_login_page == request.path %}active{% endif %}" href="{{url_login_page}}">Авторизация</a>
+</li>
+<li class="nav-item">
+
+<a class="nav-link {% if url_register_page == request.path %}active{% endif %}" href="{{url_register_page}}">Регистрация</a>
+</li>
+
+</body>
+</html>

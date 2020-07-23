@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Auth system</title>
+</head>
+<body>
+  {% block content %}
+  <h1>Welocome Home, from homepage 2</h1>
+  {% if user.is_authenticated %}
+      <a href="{% url 'logout_url' %}">Logout</a>
+  {% else %}
+      <a href="{% url 'login_url' %}">Login</a>
+      <a href="{% url 'register_url' %}">Register</a>
+  {% endif %}
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: ./App
+    command: python3 ./manage.py runserver 0.0.0.0:8000
+    ports:
+    - 8000:8000
+    volumes:
+    - ./App:/data
+    depends_on:
+    - db
+    environment:
+     DATABASE_URL: postgres://postgres@db/postgres
+
+  db:
+    image: postgres:12.2
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust

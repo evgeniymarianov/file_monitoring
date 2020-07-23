@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h1>Welcome, {{user.username}}</h1>
+  <h2>Upload</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="description">
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+
+<p>Uploaded files:</p>
+<ul>
+  {% for obj in documents %}
+  <li>
+    <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
+    <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+  </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

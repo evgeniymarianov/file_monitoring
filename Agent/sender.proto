@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Message {
+    string value = 1;
+}
+
+service Sender {
+    rpc Send(Message) returns (Message) {}
+}
